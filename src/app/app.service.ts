@@ -66,7 +66,7 @@ export class AppService extends Unsubscriber {
     this.playerMoves$ = new ReplaySubject<number[]>(1);
 
     this._player = new Player();
-    this._player.setPlayerPosition(4, 2);
+    this._player.setPlayerPosition(2, 2);
     this._player.setStartingPosition(-1, -1);
 
     this._player.playerPosition
@@ -128,7 +128,7 @@ export class AppService extends Unsubscriber {
         }
         // The first knights move
         if (v === this.start - 2) {
-          if (this.playerPosition.row === 4 && this.playerPosition.col === 2) {
+          if (this.playerPosition.row === 2 && this.playerPosition.col === 2) {
             // player did not click, shower slimes on them
             this.stopGame(kill$, speedMultiplier);
             component.setStatusText(
@@ -255,7 +255,7 @@ export class AppService extends Unsubscriber {
           this._player.steps = 0;
           this._player.setStartingPosition(-1, -1);
 
-          if (this.playerPosition.col !== 2 || this.playerPosition.row !== 4) {
+          if (this.playerPosition.col !== 2 || this.playerPosition.row !== 0) {
             component.setStatusText(
               `You did not reach the target tile. DOOOOOM`
             );
@@ -292,7 +292,7 @@ export class AppService extends Unsubscriber {
     this._playerMoves = this.generate2DifferentRandomNumbers(2, 4);
     this.playerMoves$.next(this._playerMoves);
 
-    this._player.setPlayerPosition(4, 2);
+    this._player.setPlayerPosition(2, 2);
   }
 
   private generate2DifferentRandomNumbers(from: number, to: number): number[] {

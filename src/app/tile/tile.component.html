@@ -7,6 +7,9 @@
   class="tile-div"
   (click)="this.onClick()"
 >
+  <div *ngIf="this.imgsrc" class="tile-player">
+    <img [src]="this.imgsrc" class="drs-wol-image"/>
+  </div>
   <div *ngIf="this.hasPlayer" class="tile-player">
     <drs-dots
       class="drs-dots"

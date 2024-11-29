@@ -16,6 +16,7 @@ export class TileComponent extends Unsubscriber implements OnInit {
 
   player: Player;
   color: string;
+  imgsrc: string;
   hasPlayer: boolean;
 
   animationClass = 'normal';
@@ -60,6 +61,25 @@ export class TileComponent extends Unsubscriber implements OnInit {
           this.tile.col === startingCoords.col
             ? 'yellow'
             : this.tile.color;
+
+        this.imgsrc =
+          this.tile.row === 3 && this.tile.col === 0
+            ? "assets/061248_hr1.png"
+            : this.tile.row === 4 && this.tile.col === 1
+            ? "assets/061246_hr1.png"
+            : this.tile.row === 3 && this.tile.col === 2
+            ? "assets/061243_hr1.png"
+            : this.tile.row === 2 && this.tile.col === 1
+            ? "assets/061247_hr1.png"
+            : this.tile.row === 2 && this.tile.col === 3
+            ? "assets/061242_hr1.png"
+            : this.tile.row === 1 && this.tile.col === 2
+            ? "assets/061241_hr1.png"
+            : this.tile.row === 1 && this.tile.col === 4
+            ? "assets/061245_hr1.png"
+            : this.tile.row === 0 && this.tile.col === 3
+            ? "assets/061244_hr1.png"
+            : "";
       });
   }
 

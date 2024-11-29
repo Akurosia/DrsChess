@@ -3,6 +3,7 @@ export class Tile {
   public static readonly SizePx = '142px';
 
   public color: string;
+  public imgsrc: string;
   public explodingRow = false;
   public explodingCol = false;
 
@@ -15,11 +16,13 @@ export class Tile {
     const evenCol = this.col % 2 === 0;
 
     this.color =
-      this.row === 4 && this.col === 2
+      this.row === 0 && this.col === 2
         ? 'aqua'
         : this.xor(evenRow, evenCol)
         ? 'black'
         : 'white';
+
+    this.imgsrc = "";
   }
 
   private xor(foo: boolean, bar: boolean): boolean {
